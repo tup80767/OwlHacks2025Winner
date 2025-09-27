@@ -52,7 +52,7 @@ export default function Home() {
           type="number"
           value={units}
           onChange={(e) => setUnits(e.target.value)}
-          placeholder="Insulin units"
+          placeholder="Water units"
           className="p-2 rounded-lg border border-gray-300"
         />
         <button

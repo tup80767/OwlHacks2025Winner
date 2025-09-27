@@ -38,8 +38,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-100 to-purple-200 p-6">
-      <h1 className="text-3xl font-bold mb-6">🐥 OwlHacks Pet</h1>
-
+      <h1 className="text-3xl font-bold mb-6"> Hydrate or Die-drate!</h1>
+      <h2 className="mb-6">Input the amount of water you drank to hydrate your cat!</h2>
       <div className="text-8xl mb-4">
         {petHappy ? "😺" : "😿"}
       </div>

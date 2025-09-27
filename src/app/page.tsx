@@ -1,5 +1,6 @@
 "use client"; // needed for hooks in the app router
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 type LogEntry = {
   units: string;
@@ -9,7 +10,8 @@ type LogEntry = {
 export default function Home() {
   const [logs, setLogs] = useState<LogEntry[]>([]);
   const [units, setUnits] = useState("");
-  const [petHappy, setPetHappy] = useState(false);
+  const [petHappy, setPetMood] = useState<"happy" | "neutral" | "sad" | "dead">("neutral");
+;
 
   useEffect(() => {
     const saved = localStorage.getItem("insulinLogs");
@@ -31,9 +33,15 @@ export default function Home() {
 
     setLogs([newLog, ...logs]);
     setUnits("");
-    setPetHappy(true);
 
-    setTimeout(() => setPetHappy(false), 3000);
+      // Update pet mood based on dose
+    const doseNum = parseInt(units);
+    if (doseNum >= 3 && doseNum <= 6) setPetMood("happy");
+    else if (doseNum > 0) setPetMood("neutral");
+    else setPetMood("sad");
+
+    // Reset to neutral after 3s
+    setTimeout(() => setPetMood("neutral"), 3000);
   };
 
   return (
@@ -41,17 +49,21 @@ export default function Home() {
       <h1 className="text-3xl font-bold mb-6">🐥 OwlHacks Pet</h1>
 
    <div className="mb-4 w-32 h-32 relative">
-  <Image
-    src={petHappy ? "/images/happy.jpg" : "/images/sad.jpg"}
-    alt={petHappy ? "Happy Pet" : "Sad Pet"}
-    fill
-    style={{ objectFit: "contain" }}
-  />
+   <Image
+          src={`/images/${petMood}.jpg`}
+          alt={`${petMood} pet`}
+          fill
+          style={{ objectFit: "contain" }}
+        />
 
 </div>
 
       <p className="mb-6">
-        {petHappy ? "Your pet is happy! 🎉" : "Your pet needs care..."}
+         {petMood === "happy"
+          ? "Your pet is happy! 🎉"
+          : petMood === "neutral"
+          ? "Your pet is feeling okay..."
+          : "Your pet needs care!"}
       </p>
 
       <form onSubmit={handleSubmit} className="flex gap-2 mb-6">

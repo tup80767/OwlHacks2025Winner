@@ -40,9 +40,15 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-100 to-purple-200 p-6">
       <h1 className="text-3xl font-bold mb-6">🐥 OwlHacks Pet</h1>
 
-      <div className="text-8xl mb-4">
-        {petHappy ? "😺" : "😿"}
-      </div>
+   <div className="mb-4 w-32 h-32 relative">
+  <Image
+    src={petHappy ? "/pets/happy.jpg" : "/pets/sad.jpg"}
+    alt={petHappy ? "Happy Pet" : "Sad Pet"}
+    fill
+    style={{ objectFit: "contain" }}
+  />
+</div>
+
       <p className="mb-6">
         {petHappy ? "Your pet is happy! 🎉" : "Your pet needs care..."}
       </p>

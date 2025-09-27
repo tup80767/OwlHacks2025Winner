@@ -52,7 +52,7 @@ export default function Home() {
           type="number"
           value={units}
           onChange={(e) => setUnits(e.target.value)}
-          placeholder="Water units"
+          placeholder="Enter amount here"
           className="p-2 rounded-lg border border-gray-300"
         />
         <button
@@ -71,7 +71,7 @@ export default function Home() {
           <ul className="space-y-2">
             {logs.map((log, i) => (
               <li key={i} className="flex justify-between">
-                <span>{log.units} units</span>
+                <span>{log.units} oz</span>
                 <span className="text-gray-500">{log.time}</span>
               </li>
             ))}

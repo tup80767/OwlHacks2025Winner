@@ -42,11 +42,12 @@ export default function Home() {
 
    <div className="mb-4 w-32 h-32 relative">
   <Image
-    src={petHappy ? "/pets/happy.jpg" : "/pets/sad.jpg"}
+    src={petHappy ? "/images/happy.jpg" : "/images/sad.jpg"}
     alt={petHappy ? "Happy Pet" : "Sad Pet"}
     fill
     style={{ objectFit: "contain" }}
   />
+
 </div>
 
       <p className="mb-6">

@@ -34,3 +34,49 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
+# 🐥 Owl Pet (OwlHacks 2025)
+
+A virtual pet website that helps people with diabetes manage their insulin routine.  
+Every time you log your insulin, your pet gets happy! 🎉
+
+Built with **Next.js (App Router)**, **TypeScript**, and **TailwindCSS**.
+
+---
+
+## 🚀 Features
+- 🐾 Virtual pet that reacts when you log insulin
+- 💉 Log insulin units and timestamp
+- 📜 History of insulin logs (saved in localStorage)
+- 🌈 Clean, responsive UI with TailwindCSS
+
+---
+
+## 🛠 Tech Stack
+- [Next.js 13+](https://nextjs.org/) (React framework)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/) for styling
+- LocalStorage for persistence
+
+---
+
+## 📦 Getting Started
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/tup80767/OwlHacks2025Winner.git
+   cd owl-pet
+Install dependencies:
+
+bash
+Copy code
+npm install
+Run the dev server:
+
+bash
+Copy code
+npm run dev
+Open http://localhost:3000 🎉
